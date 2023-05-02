@@ -1,1 +1,1 @@
-# Thermodynamic_cycle_simulator
+# Thermodynamic cycles simulator
