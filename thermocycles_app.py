@@ -98,7 +98,6 @@ if cycle_choice == 'Rankine Hirn':
     
     if compute_cycle:
         
-        @st.cache_data
         def compute(T_max,T_min,p_max,p_min,x_min,P_out,qm,eta_isent_T,eta_isent_P,eta_mec,eta_VG,p_reheating,p_bleeding):
             
             cycle=RH_cycle(T_max, T_min, p_max,p_min,x_min,P_out,qm,eta_isent_T,eta_isent_P,eta_mec,eta_VG,p_reheating,p_bleeding)
