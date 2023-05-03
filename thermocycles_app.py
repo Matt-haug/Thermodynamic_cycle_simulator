@@ -19,17 +19,6 @@ cycle_choice = st.selectbox('Select the cycle you want to compute',('Rankine Hir
     
 if cycle_choice == 'Rankine Hirn':
     
-    p_min=None
-    x_min=0
-    P_out=None
-    qm=None
-    eta_isent_T=1
-    eta_isent_P=1
-    eta_mec=1
-    eta_VG=1
-    p_reheating=None
-    p_bleeding=None
-    
     col1,col2,col3 = st.columns(3)
     
     T_max = col1.number_input('$T_{max} \ [K]$')
@@ -93,12 +82,19 @@ if cycle_choice == 'Rankine Hirn':
     if 'p_bleeding : Bleeding(s) pressure(s)' in advanced_param_choice:
         
         st.markdown('*Bleedings are yet to be implemented !*')
-        
-    compute_cycle = st.button('Compute cycle',type='primary')
     
-    if compute_cycle:
-        
-        def compute(T_max,T_min,p_max,p_min,x_min,P_out,qm,eta_isent_T,eta_isent_P,eta_mec,eta_VG,p_reheating,p_bleeding):
+    p_min=None
+    x_min=0
+    P_out=None
+    qm=None
+    eta_isent_T=1
+    eta_isent_P=1
+    eta_mec=1
+    eta_VG=1
+    p_reheating=None
+    p_bleeding=None
+    
+    def compute(T_max,T_min,p_max,p_min,x_min,P_out,qm,eta_isent_T,eta_isent_P,eta_mec,eta_VG,p_reheating,p_bleeding):
             
             cycle=RH_cycle(T_max, T_min, p_max,p_min,x_min,P_out,qm,eta_isent_T,eta_isent_P,eta_mec,eta_VG,p_reheating,p_bleeding)
             cycle.evaluate()
@@ -168,6 +164,10 @@ if cycle_choice == 'Rankine Hirn':
                 st.markdown('$Q_{{VG}} = {:.2f} \ [kW]$ '.format(metrics[6]*1e-3))
                 st.markdown('$Q_{{condenser}} = {:.2f} \ [kW]$ '.format(metrics[7]*1e-3))
                 
+    compute_cycle = st.button('Compute cycle',type='primary')
+    
+    if compute_cycle:
+        
         compute(T_max, T_min, p_max,p_min,x_min,P_out,qm,eta_isent_T,eta_isent_P,eta_mec,eta_VG,p_reheating,p_bleeding)
         
 st.divider()
