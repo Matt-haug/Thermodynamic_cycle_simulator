@@ -2,7 +2,7 @@
 """
 Created on Tue Apr 25 09:41:03 2023
 
-@author: matte
+@author: Mattéo Hauglustaine
 """
 
 import streamlit as st
@@ -94,6 +94,7 @@ if cycle_choice == 'Rankine Hirn':
     p_reheating=None
     p_bleeding=None
     
+    @st.cache_data
     def compute(T_max,T_min,p_max,p_min,x_min,P_out,qm,eta_isent_T,eta_isent_P,eta_mec,eta_VG,p_reheating,p_bleeding):
             
             cycle=RH_cycle(T_max, T_min, p_max,p_min,x_min,P_out,qm,eta_isent_T,eta_isent_P,eta_mec,eta_VG,p_reheating,p_bleeding)
@@ -172,4 +173,4 @@ if cycle_choice == 'Rankine Hirn':
         
 st.divider()
 
-st.caption('Made by **Mattéo Hauglustaine** - 2023 - *Click here to get acces to the source code on my GitHub*')
+st.caption('Made by **Mattéo Hauglustaine** - 2023 - *Click [here](https://github.com/Matt-haug/Thermodynamic_cycle_simulator) to get acces to the source code on my GitHub*')
