@@ -261,6 +261,7 @@ class RH_cycle():
             plt.xticks(fontsize=14,family='serif')
             plt.yticks(fontsize=14,family='serif')
             plt.ylim((-10,self.T_max-273.15+30))
+            plt.xlim((-0.5,10))
             plt.title('T-s diagram',fontsize=17,family='serif',weight='bold')
             
             # Bell curve #
@@ -379,6 +380,7 @@ class RH_cycle():
             plt.xticks(fontsize=14,family='serif')
             plt.yticks(fontsize=14,family='serif')
             plt.ylim((-100,self.h1*1e-3+350))
+            plt.xlim((-0.5,10))
             plt.title('h-s diagram',fontsize=17,family='serif',weight='bold')
             
             # Bell curve #
