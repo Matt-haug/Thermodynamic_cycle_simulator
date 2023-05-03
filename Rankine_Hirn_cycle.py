@@ -44,6 +44,8 @@ class RH_cycle():
     
     The method 'evaluate' computes the cycle.
     
+    The method 'return_data' allows to store the outputs into variables.
+    
     """
     def __init__(self,T_max,T_min,p_max,p_min=None,x_min=0,P_out=None,qm=None,eta_isent_T=1,eta_isent_P=1,eta_mec=1,eta_VG=1,p_reheating=None,p_bleeding=None,makeplot=True):
         
@@ -244,6 +246,8 @@ class RH_cycle():
         if self.makeplot == True:
             
             ### Plotting ###
+            
+            plt.ioff()
             
             ## T,s diagram ##
             
